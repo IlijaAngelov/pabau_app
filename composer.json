@@ -1,0 +1,11 @@
+{
+    "name": "ilija/pabau_app",
+    "autoload": {
+        "psr-4": {
+            "Ilija\\PabauApp\\": "src/"
+        }
+    },
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
