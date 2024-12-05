@@ -48,18 +48,31 @@ class Database {
         try {
             $sql = "INSERT INTO Votes (`user_id`, `nominee`, `comment`, `created_at`, `category`) VALUES (:user_id, :nominee, :comment, :created_at, :category)";
 
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':user_id', $user_id);
-            $stmt->bindParam(':nominee', $nominee);
-            $stmt->bindParam(':comment', $comment);
-            $stmt->bindParam(':created_at', $created_at);
-            $stmt->bindParam(':category', $category);
+                $stmt = $this->pdo->prepare($sql);
+                $stmt->bindParam(':user_id', $user_id);
+                $stmt->bindParam(':nominee', $nominee);
+                $stmt->bindParam(':comment', $comment);
+                $stmt->bindParam(':created_at', $created_at);
+                $stmt->bindParam(':category', $category);
 
             return $stmt->execute();
         } catch (PDOException $e) {
             die($e->getMessage());
-            error_log("Failed to insert vote: " . $e->getMessage());
-            die();
+        }
+
+    }
+
+    public function whoVotedTheMost(): array
+    {
+        $sql = "SELECT `user_id`, COUNT(user_id) as `count` FROM Votes GROUP BY `user_id` ORDER BY `count` DESC LIMIT 1";
+        $this->query($sql);
+        $user =  $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $uid = $user[0]['user_id'];
+        if($uid > 0) {
+            $sql2 = "SELECT firstname, lastname FROM Users WHERE `id` = $uid";
+            $this->query($sql2);
+            return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }
 

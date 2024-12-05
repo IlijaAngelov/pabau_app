@@ -13,8 +13,3 @@
     <title>Voting System</title>
 </head>
 <body>
-<div class="container">
-    <a href="votingForm.html" type="button" class="btn btn-primary btn-lg">Go Vote!</a>
-    <a href="categoryWinners.php" type="button" class="btn btn-secondary btn-lg">Check the Winners!</a>
-</div>
-</body>

@@ -12,4 +12,9 @@ class VoteController
     {
         return $this->pdo->storeVote($user_id, $nominee, $comment, $created_at, $category);
     }
+
+    public function whoVoted(): array
+    {
+        return $this->pdo->whoVotedTheMost();
+    }
 }
