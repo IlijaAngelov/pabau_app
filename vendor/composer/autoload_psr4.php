@@ -13,4 +13,9 @@ return array(
     'Ilija\\PabauApp\\' => array($baseDir . '/src'),
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
+    'Delight\\Http\\' => array($vendorDir . '/delight-im/http/src'),
+    'Delight\\Db\\' => array($vendorDir . '/delight-im/db/src'),
+    'Delight\\Cookie\\' => array($vendorDir . '/delight-im/cookie/src'),
+    'Delight\\Base64\\' => array($vendorDir . '/delight-im/base64/src'),
+    'Delight\\Auth\\' => array($vendorDir . '/delight-im/auth/src'),
 );
