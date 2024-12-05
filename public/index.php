@@ -15,20 +15,6 @@ use Delight\Auth\Auth;
 
 $pdo = new Database();
 
-// To get User id and imitate as logged-in user
-$_SESSION['id'] = 5;
-
-if($_SERVER['REQUEST_METHOD'] === "POST" && $_POST['action'] === "vote"){
-    $category = $_POST['category'];
-    $nominee = $_POST['nominee'];
-    $user_id = $_SESSION['id'];
-    $created_at = date('Y-m-d H:i:s');
-    $comment = $_POST['comment'];
-
-    $vote = new VoteController($pdo);
-    $vote->store($user_id, $nominee, $comment, $created_at, $category);
-}
-
 $query = new UserController($pdo);
 $users = $query->getAllUsers();
 
