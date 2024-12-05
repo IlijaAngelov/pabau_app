@@ -8,8 +8,8 @@ class VoteController
     public function __construct(protected Database $pdo)
     {}
 
-    public function store($category, $nominee, $user_id, $created_at, $comment)
+    public function store($user_id, $nominee, $comment, $created_at, $category)
     {
-        return $this->pdo->storeVote($category, $nominee, $user_id, $created_at, $comment);
+        return $this->pdo->storeVote($user_id, $nominee, $comment, $created_at, $category);
     }
 }

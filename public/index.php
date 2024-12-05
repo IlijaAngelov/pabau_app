@@ -14,42 +14,29 @@ use App\Controllers\VoteController;
 use Delight\Auth\Auth;
 
 $pdo = new Database();
+
+// To get User id and imitate as logged-in user
+$_SESSION['id'] = 5;
+
+if($_SERVER['REQUEST_METHOD'] === "POST" && $_POST['action'] === "vote"){
+    $category = $_POST['category'];
+    $nominee = $_POST['nominee'];
+    $user_id = $_SESSION['id'];
+    $created_at = date('Y-m-d H:i:s');
+    $comment = $_POST['comment'];
+
+    $vote = new VoteController($pdo);
+    $vote->store($user_id, $nominee, $comment, $created_at, $category);
+}
+
 $query = new UserController($pdo);
 $users = $query->getAllUsers();
 
 $getCategories = new CategoryController($pdo);
 $categories = $getCategories->getAllCategories();
 
-// Test Data
-$category = 'Team Player';
-$nominee = '1';
-$user_id = '1';
-$created_at = date('Y-m-d H:i:s');
-$comment = 'Oi';
-$vote = new VoteController($pdo);
-//print_r($vote->store($category, $nominee, $user_id, $created_at, $comment));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Pass the PDO instance to Delight\Auth\Auth
-$auth = new Auth($pdo);
+//$auth = new Auth($pdo);
 //die($auth);
 // Use the $auth object for authentication

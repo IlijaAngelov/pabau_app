@@ -42,7 +42,7 @@ class Database {
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function storeVote($category, $nominee, $user_id, $created_at, $comment)
+    public function storeVote($user_id, $nominee, $comment, $created_at, $category)
     {
 
         try {
