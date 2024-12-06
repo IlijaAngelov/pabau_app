@@ -1,3 +1,26 @@
+<?php
+require_once __DIR__ . '/../config/Database.php';
+require_once __DIR__ . '/../app/Controllers/UserController.php';
+
+error_reporting(E_ALL); ini_set('display_errors',1);
+
+use App\Controllers\UserController;
+
+$pdo = new Database();
+
+$query = new UserController($pdo);
+
+try {
+    $users = $query->getAllUsers();
+} catch(PDOException $e) {
+    die($e->getMessage());
+}
+
+// This imitates a logged-in user
+$u = array_rand($users);
+$session_user_id = $users[$u]['id'];
+$session_user = $users[$u]['firstname'] . ' ' . $users[$u]['lastname'];
+?>
 <?php require_once __DIR__ . '/partials/header.php'; ?>
 <div class="container voting_form">
 <h1>Vote for your favourite nominee!</h1>
@@ -5,7 +28,7 @@
     <form action="" method="POST" id="submit_vote_form">
         <div class="logged_field">
             <label for="username">Logged as </label><br>
-            <input type="text" id="username" name="username" value="Ilija" readonly />
+            <input type="text" id="username" name="username" value="<?= $session_user; ?>" readonly />
         </div>
 
         <div class="selection_field">
@@ -22,11 +45,14 @@
             <div class="field">
                 <label for="nominee">Nominees</label><br>
                 <select name="nominee" id="nominee">
-                    <option value="1">Alex</option>
-                    <option value="2">Betty</option>
-                    <option value="3">Cathy</option>
-                    <option value="4">Denise</option>
-                    <option value="5">Ilija</option>
+                    <?php foreach ($users as $user): ?>
+                        <?php
+                            if($session_user_id === $user['id']) {
+                                continue;
+                            }
+                        ?>
+                        <option value="<?= $user['id']; ?>"><?= $user['firstname'] . ' ' . $user['lastname'] ?></option>
+                    <?php endforeach;  ?>
                 </select>
             </div>
         </div>
