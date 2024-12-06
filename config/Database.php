@@ -76,6 +76,20 @@ class Database {
         }
     }
 
+    public function getCategoryWinner($category): array
+    {
+        $sql = "SELECT nominee, COUNT(nominee) as voted FROM Votes WHERE category = '$category' GROUP BY nominee ORDER BY `voted` DESC LIMIT 1";
+        $this->query($sql);
+        $categoryWinner = $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $uid = $categoryWinner[0]['nominee'];
+        if($uid > 0) {
+            $sql2 = "SELECT firstname, lastname FROM Users WHERE `id` = $uid";
+            $this->query($sql2);
+            return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+    }
+
     public function execute($sql, $params = [])
     {
         $this->query($sql, $params);

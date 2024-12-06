@@ -17,4 +17,9 @@ class VoteController
     {
         return $this->pdo->whoVotedTheMost();
     }
+
+    public function categoryWinner($category): array
+    {
+        return $this->pdo->getCategoryWinner($category);
+    }
 }
