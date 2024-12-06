@@ -18,17 +18,50 @@ try {
 }
 ?>
 <?php require_once __DIR__ . '/partials/header.php'; ?>
-<div class="container">
-    <h1>Here are the winners for each category</h1>
-    <h3>Makes Work Fun</h3>
-    <p>Winner: </p>
-    <h3>Team Player</h3>
-    <p>Winner: </p>
-    <h3>Culture Champion</h3>
-    <p>Winner: </p>
-    <h3>Difference Maker</h3>
-    <p>Winner: </p>
-    <h3>Employee who voted the most:</h3>
-    <p><?= $voter[0]['firstname'] . ' ' . $voter[0]['lastname'] ?></p>
+<div class="container container_winners">
+
+    <div class="container_row">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/public/images/makesworkfun.jpg" alt="Makes Fun Work Person">
+            <div class="card-body">
+                <h5 class="card-title">Makes Fun Work Winner!</h5>
+                <p class="card-text">Someone Something</p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/public/images/teamplayer.jpg" alt="Team Player Person">
+            <div class="card-body">
+                <h5 class="card-title">Team Player Winner!</h5>
+                <p class="card-text">Someone Something</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_row">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/public/images/culturechampion.jpg" alt="Culture Champion">
+            <div class="card-body">
+                <h5 class="card-title">Culture Champion!</h5>
+                <p class="card-text">Someone Something</p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/public/images/differncemaker.jpg" alt="Differnce Maker">
+            <div class="card-body">
+                <h5 class="card-title">Difference Maker!</h5>
+                <p class="card-text">Someone Something</p>
+            </div>
+            </div>
+        </div>
+
+        <div class="most_voting_emp">
+            <h3>Employee who voted the most:</h3>
+            <p><?= $voter[0]['firstname'] . ' ' . $voter[0]['lastname'] ?></p>
+        </div>
+    </div>
+
+
 </div>
 </body>

@@ -16,7 +16,7 @@ $(document).ready(function () {
                 comment: comment
             },
             success: function(response){
-                window.location.href = "/views/index.html";
+                window.location.href = "/views/index.php";
             },
             error: function(response) {
                 alert('error');

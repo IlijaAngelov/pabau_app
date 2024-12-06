@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container_index {
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.container_winners {
+    height: 80vh;
+}
+
+.voting_form {
+    height: 80vh;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    padding: 10px;
+    margin: 10px;
+}
+
+.logged_field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.field {
+    width: 15rem;
+    margin: 2rem;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.field > input {
+    width: 15rem;
+}
+
+.field > select {
+    width: 15rem;
+    list-style: none;
+}
+
+.selection_field {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+
+}
+
+textarea {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.textarea_field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem;
+}
+
+textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+label {
+    display: block;
+}
+
+.submit_field {
+    display: flex;
+    margin: 2rem;
+}
+
+.submit-btn {
+
+    width: 100%;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-top: 20vh;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.a {
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    min-height: 200px;
+}
+
+.container_row {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin: 10px;
+}
+
+.most_voting_emp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

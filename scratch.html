@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .category {
+            margin-bottom: 20px;
+        }
+
+        .category h2 {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin: 10px 0;
+        }
+
+        .options input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .submit {
+            display: block;
+            width: 100%;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Vote for Your Favorites</h1>
+
+    <form id="votingForm">
+        <!-- Category 1 -->
+        <div class="category">
+            <h2>Category 1</h2>
+            <ul class="options">
+                <li><label><input type="radio" name="category1" value="Person 1"> Person 1</label></li>
+                <li><label><input type="radio" name="category1" value="Person 2"> Person 2</label></li>
+                <li><label><input type="radio" name="category1" value="Person 3"> Person 3</label></li>
+                <li><label><input type="radio" name="category1" value="Person 4"> Person 4</label></li>
+            </ul>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="category">
+            <h2>Category 2</h2>
+            <ul class="options">
+                <li><label><input type="radio" name="category2" value="Person 1"> Person 1</label></li>
+                <li><label><input type="radio" name="category2" value="Person 2"> Person 2</label></li>
+                <li><label><input type="radio" name="category2" value="Person 3"> Person 3</label></li>
+                <li><label><input type="radio" name="category2" value="Person 4"> Person 4</label></li>
+            </ul>
+        </div>
+
+        <!-- Category 3 -->
+        <div class="category">
+            <h2>Category 3</h2>
+            <ul class="options">
+                <li><label><input type="radio" name="category3" value="Person 1"> Person 1</label></li>
+                <li><label><input type="radio" name="category3" value="Person 2"> Person 2</label></li>
+                <li><label><input type="radio" name="category3" value="Person 3"> Person 3</label></li>
+                <li><label><input type="radio" name="category3" value="Person 4"> Person 4</label></li>
+            </ul>
+        </div>
+
+        <!-- Category 4 -->
+        <div class="category">
+            <h2>Category 4</h2>
+            <ul class="options">
+                <li><label><input type="radio" name="category4" value="Person 1"> Person 1</label></li>
+                <li><label><input type="radio" name="category4" value="Person 2"> Person 2</label></li>
+                <li><label><input type="radio" name="category4" value="Person 3"> Person 3</label></li>
+                <li><label><input type="radio" name="category4" value="Person 4"> Person 4</label></li>
+            </ul>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Votes</button>
+    </form>
+</div>
+</body>
+</html>
