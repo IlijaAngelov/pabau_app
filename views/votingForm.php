@@ -1,12 +1,13 @@
 <?php
 require_once __DIR__ . '/../config/Database.php';
 require_once __DIR__ . '/../app/Controllers/UserController.php';
+$config = require __DIR__ . '/../config/config.php';
 
 error_reporting(E_ALL); ini_set('display_errors',1);
 
 use App\Controllers\UserController;
 
-$pdo = new Database();
+$pdo = new Database($config['database']);
 
 $query = new UserController($pdo);
 

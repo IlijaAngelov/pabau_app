@@ -1,18 +1,14 @@
 <?php
 
 class Database {
-    private string $host = '127.0.0.1';
-    private string $dbName = 'pabau';
-    private string $username = 'root';
-    private string $password = 'neznam2314.';
     private $pdo;
     private $stmt;
 
-    public function __construct()
+    public function __construct($config, $username = 'root', $password = 'neznam2314.')
     {
         try {
-            $dsn = "mysql:host={$this->host};dbname={$this->dbName};charset=utf8mb4";
-            $this->pdo = new PDO($dsn, $this->username, $this->password);
+            $dsn = 'mysql: ' . http_build_query($config, '', ';');
+            $this->pdo = new PDO($dsn, $username, $password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die("Database connection failed: " . $e->getMessage());

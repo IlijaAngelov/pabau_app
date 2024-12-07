@@ -4,6 +4,7 @@ require_once __DIR__ . '/../config/Database.php';
 require_once __DIR__ . '/../app/Controllers/UserController.php';
 require_once __DIR__ . '/../app/Controllers/CategoryController.php';
 require_once __DIR__ . '/../app/Controllers/VoteController.php';
+$config = require __DIR__ . '/../config/config.php';
 
 error_reporting(E_ALL); ini_set('display_errors',1);
 session_start();
@@ -13,7 +14,7 @@ use App\Controllers\UserController;
 use App\Controllers\VoteController;
 use Delight\Auth\Auth;
 
-$pdo = new Database();
+$pdo = new Database($config['database']);
 
 $query = new UserController($pdo);
 $users = $query->getAllUsers();

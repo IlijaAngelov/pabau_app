@@ -4,13 +4,13 @@ require_once "../vendor/autoload.php";
 require_once __DIR__ . '/../config/Database.php';
 require_once __DIR__ . '/../app/Controllers/VoteController.php';
 require_once __DIR__ . '/../app/Controllers/CategoryController.php';
-
+$config = require __DIR__ . '/../config/config.php';
 error_reporting(E_ALL); ini_set('display_errors',1);
 
 use App\Controllers\CategoryController;
 use App\Controllers\VoteController;
 
-$pdo = new Database();
+$pdo = new Database($config['database']);
 $query = new VoteController($pdo);
 $category_query = new CategoryController($pdo);
 
