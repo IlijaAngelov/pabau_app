@@ -5,7 +5,7 @@ $(document).ready(function () {
         let nominee = $("#nominee").val();
         let category = $("#category").val();
         let comment = $("#comment").val();
-        let url = '/public/submitVote.php';
+        let url = '/submitVote';
         $.ajax({
             type: "POST",
             url: url,
@@ -16,7 +16,7 @@ $(document).ready(function () {
                 comment: comment
             },
             success: function(response){
-                window.location.href = "/views/index.php";
+                window.location.href = "/";
             },
             error: function(response) {
                 alert('error');

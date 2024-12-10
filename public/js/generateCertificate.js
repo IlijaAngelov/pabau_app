@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(".category_winner").click(function () {
-        let url = 'generate.php';
+        let url = '/generate';
         let data = $(this).attr('data-winner');
         console.info(data);
         $.ajax({
@@ -8,12 +8,11 @@ $(document).ready(function () {
             url: url,
             data: {data},
             success: function(response){
-                window.location.href = "/views/generate.php";
+                window.location.href = "/";
             },
             error: function(response) {
-                // alert('error');
+                alert('error');
             }
         });
-
     });
 });

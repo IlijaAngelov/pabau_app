@@ -37,23 +37,23 @@ $differenceMakerWinner = $query->categoryWinner(substr($differenceMakerCategory,
 
     <div class="container_row">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="/public/images/makesworkfun.jpg" alt="Makes Fun Work Person">
+            <img class="card-img-top" src="/images/makesworkfun.jpg" alt="Makes Fun Work Person">
             <div class="card-body">
                 <h5 class="card-title">Makes Fun Work Winner!</h5>
                 <p class="card-text" ><?= $makeWorkFunWinner[0]['firstname'] . ' ' . $makeWorkFunWinner[0]['lastname']; ?></p>
                     <a class="btn btn-primary"
-                        href="generate.php?winner=<?= $makeWorkFunWinner[0]['firstname'] . ' ' . $makeWorkFunWinner[0]['lastname']; ?>">
+                        href="/generate?winner=<?= $makeWorkFunWinner[0]['firstname'] . ' ' . $makeWorkFunWinner[0]['lastname']; ?>">
                         Get Certificate</a>
             </div>
         </div>
 
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="/public/images/teamplayer.jpg" alt="Team Player Person">
+            <img class="card-img-top" src="/images/teamplayer.jpg" alt="Team Player Person">
             <div class="card-body">
                 <h5 class="card-title">Team Player Winner!</h5>
                 <p class="card-text" ><?= $teamPlayerWinner[0]['firstname'] . ' ' . $teamPlayerWinner[0]['lastname']; ?></p>
                 <a class="btn btn-primary"
-                   href="generate.php?winner=<?= $teamPlayerWinner[0]['firstname'] . ' ' . $teamPlayerWinner[0]['lastname']; ?>">
+                   href="/generate?winner=<?= $teamPlayerWinner[0]['firstname'] . ' ' . $teamPlayerWinner[0]['lastname']; ?>">
                     Get Certificate</a>
             </div>
         </div>
@@ -61,23 +61,23 @@ $differenceMakerWinner = $query->categoryWinner(substr($differenceMakerCategory,
 
     <div class="container_row">
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="/public/images/culturechampion.jpg" alt="Culture Champion">
+            <img class="card-img-top" src="/images/culturechampion.jpg" alt="Culture Champion">
             <div class="card-body">
                 <h5 class="card-title">Culture Champion!</h5>
                 <p class="card-text" ><?= $cultureChampionWinner[0]['firstname'] . ' ' . $cultureChampionWinner[0]['lastname']; ?></p>
                 <a class="btn btn-primary"
-                   href="generate.php?winner=<?= $cultureChampionWinner[0]['firstname'] . ' ' . $cultureChampionWinner[0]['lastname']; ?>">
+                   href="/generate?winner=<?= $cultureChampionWinner[0]['firstname'] . ' ' . $cultureChampionWinner[0]['lastname']; ?>">
                     Get Certificate</a>
             </div>
         </div>
 
         <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="/public/images/differncemaker.jpg" alt="Differnce Maker">
+            <img class="card-img-top" src="/images/differncemaker.jpg" alt="Differnce Maker">
             <div class="card-body">
                 <h5 class="card-title">Difference Maker!</h5>
                 <p class="card-text" ><?= $differenceMakerWinner[0]['firstname'] . ' ' . $differenceMakerWinner[0]['lastname']; ?></p>
                 <a class="btn btn-primary"
-                   href="generate.php?winner=<?= $differenceMakerWinner[0]['firstname'] . ' ' . $differenceMakerWinner[0]['lastname']; ?>">
+                   href="/generate?winner=<?= $differenceMakerWinner[0]['firstname'] . ' ' . $differenceMakerWinner[0]['lastname']; ?>">
                     Get Certificate</a>
             </div>
             </div>
@@ -90,4 +90,4 @@ $differenceMakerWinner = $query->categoryWinner(substr($differenceMakerCategory,
     </div>
 </div>
 </body>
-<!--<script src="/public/js/generateCertificate.js"></script>-->
+<script src="/js/generateCertificate.js"></script>

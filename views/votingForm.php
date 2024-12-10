@@ -23,6 +23,7 @@ $session_user_id = $users[$u]['id'];
 $session_user = $users[$u]['firstname'] . ' ' . $users[$u]['lastname'];
 ?>
 <?php require_once __DIR__ . '/partials/header.php'; ?>
+<body>
 <div class="container voting_form">
 <h1>Vote for your favourite nominee!</h1>
 
@@ -73,4 +74,4 @@ $session_user = $users[$u]['firstname'] . ' ' . $users[$u]['lastname'];
 </div>
 </body>
 </html>
-<script src="/public/js/submitVote.js"></script>
+<script src="js/submitVote.js"></script>
