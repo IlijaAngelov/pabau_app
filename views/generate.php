@@ -2,8 +2,6 @@
 require_once "../vendor/autoload.php";
 require_once __DIR__ . '/generatePDF.php';
 
-echo "aj saa de";
-
 $winner = $_GET['winner'];
 $pdf = new generatePDF();
 $pdf->AliasNbPages();
